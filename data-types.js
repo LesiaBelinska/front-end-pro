@@ -6,8 +6,8 @@ let bigIntValue = 224343545456565632323134343534666767567434n;
 let booleanValue = true;
 let undefinedValue;
 let nullValue = null;
-let symbolValue = Symbol('symbol');
-let objectValue = { key: 'value' };
+let symbolValue = Symbol("symbol");
+let objectValue = { key: "value" };
 
 console.log(typeof numberValue);
 console.log(typeof stringValue);
