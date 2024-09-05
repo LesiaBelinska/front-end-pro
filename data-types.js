@@ -7,6 +7,7 @@ let booleanValue = true;
 let undefinedValue;
 let nullValue = null;
 let symbolValue = Symbol('symbol');
+let objectValue = { key: 'value' };
 
 console.log(typeof numberValue);
 console.log(typeof stringValue);
@@ -15,3 +16,4 @@ console.log(typeof booleanValue);
 console.log(typeof undefinedValue);
 console.log(typeof nullValue);
 console.log(typeof symbolValue);
+console.log(typeof objectValue);
