@@ -1,8 +1,7 @@
-"use strict"
+"use strict";
 
 const userName = prompt("Please, enter your name");
 
-if (userName !== null && userName.trim() !== '') {
-    alert(`Hello, ${userName}! How are you?`);
+if (userName !== null && userName.trim() !== "") {
+  alert(`Hello, ${userName}! How are you?`);
 }
-
