@@ -1,27 +1,66 @@
 "use strict";
 
-const addTaskButton = document.querySelector("#add-task");
-const taskList = document.querySelector("#task-list");
+const sendMessageButton = document.querySelector("#send-message-button");
+const nameField = document.querySelector("#name");
+const messageField = document.querySelector("#message");
+const phoneField = document.querySelector("#phone-number");
+const emailField = document.querySelector("#email");
+const errorMessages = document.querySelectorAll(".error-message");
 
-addTaskButton.addEventListener("click", function () {
-    const taskInput = document.querySelector("#new-task");
-    const taskText = taskInput.value.trim();
+const validateField = (field, errorElementId, validationFn, errorMessage) => {
+    const errorElement = document.querySelector(errorElementId);
+    if (!validationFn(field.value.trim())) {
+        errorElement.textContent = errorMessage;
+        field.classList.add("error");
 
-    if (taskText !== "") {
-        const newTask = document.createElement("li");
-        const deleteButton = document.createElement("button");
-        deleteButton.textContent = "Delete";
-        deleteButton.className = "delete-button";
+        return false;
+    } else {
+        errorElement.textContent = "";
+        field.classList.remove("error");
 
-        newTask.textContent = taskText;
-        newTask.appendChild(deleteButton);
-        document.querySelector("#task-list").appendChild(newTask);
-        taskInput.value = "";
+        return true;
     }
-});
+};
 
-taskList.addEventListener("click", function (event) {
-    if (event.target.classList.contains("delete-button")) {
-        event.target.parentElement.remove();
+sendMessageButton.addEventListener("click", function () {
+    errorMessages.forEach((message) => (message.textContent = ""));
+
+    let isValid = true;
+
+    isValid &= validateField(
+        nameField,
+        "#name-error",
+        (value) => value !== "",
+        "Name is required"
+    );
+
+    isValid &= validateField(
+        messageField,
+        "#message-error",
+        (value) => value.length >= 5,
+        "Message must be at least 5 characters"
+    );
+
+    const phonePattern = /^\+380\d{9}$/;
+    isValid &= validateField(
+        phoneField,
+        "#phone-error",
+        (value) => phonePattern.test(value),
+        "Phone number must start with +380 and contain 12 digits"
+    );
+
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    isValid &= validateField(
+        emailField,
+        "#email-error",
+        (value) => emailPattern.test(value),
+        "Please enter a valid email address"
+    );
+
+    if (isValid) {
+        console.log("Name:", nameField.value.trim());
+        console.log("Message:", messageField.value.trim());
+        console.log("Phone Number:", phoneField.value.trim());
+        console.log("Email:", emailField.value.trim());
     }
 });
