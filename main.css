@@ -45,3 +45,51 @@ img {
   padding-left: 0;
   list-style: none;
 }
+
+.centering {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.content-wrapper {
+  width: 90%;
+  max-width: 520px;
+  padding: 40px 20px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+
+.text {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #6babbd;
+  font-weight: 500;
+  text-align: center;
+}
+
+.buttons-wrapper {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button {
+  min-width: 150px;
+  padding: 5px 10px;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.4;
+  border: 0;
+  border-radius: 7px;
+  color: aliceblue;
+  background-color: #6babbd;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out;
+}
+
+button:hover {
+  background-color: #c4eeee;
+}
