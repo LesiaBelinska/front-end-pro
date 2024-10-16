@@ -1,22 +1,11 @@
 "use strict";
 
-document.addEventListener("DOMContentLoaded", () => {
-    let link;
+const buttonsWrapper = document.querySelector(".buttons-wrapper");
 
-    const getLinkButton = document.querySelector("#get-link-button");
-    const redirectButton = document.querySelector("#redirect-button");
+buttonsWrapper.addEventListener("click", (event) => {
+    const target = event.target;
 
-    if (getLinkButton) {
-        getLinkButton.addEventListener("click", () => {
-            link = prompt("Enter a link");
-        });
-    }
-
-    if (redirectButton) {
-        redirectButton.addEventListener("click", () => {
-            if (link) {
-                window.location.replace(link);
-            }
-        });
+    if (target.tagName === "BUTTON") {
+        alert(`You chose: ${target.textContent}`);
     }
 });
