@@ -1,19 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"
+    />
     <link rel="stylesheet" href="./main.css" />
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <h1>To-Do List</h1>
-        <input type="text" id="new-task" placeholder="Enter a new task">
-        <button id="add-task">Add Task</button>
-        <ul id="task-list"></ul>
+        <form id="help-form">
+            <h2 class="form-title">We would like to help you</h2>
+            <input type="text" id="name" required placeholder="Name" class="input-field" />
+            <div id="name-error" class="error-message"></div>
+
+            <textarea id="message" min="5" placeholder="Message" class="textarea-field"></textarea>
+            <div id="message-error" class="error-message"></div>
+
+            <h4 class="section-title">How to answer you?</h4>
+            <input type="text" id="phone-number" placeholder="Phone number" class="input-field" />
+            <div id="phone-error" class="error-message"></div>
+
+            <input type="email" id="email" placeholder="Email" class="input-field" />
+            <div id="email-error" class="error-message"></div>
+
+            <button type="button" id="send-message-button" class="send-button">Send message</button>
+        </form>
     </div>
     <script src="./index.js"></script>
-</body>
+  </body>
 </html>
