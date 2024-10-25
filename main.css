@@ -50,6 +50,8 @@ img {
 }
 
 .container {
+  width: 100%;
+  max-width: 700px;
   margin-top: 5vh;
   padding: 20px;
   text-align: center;
@@ -93,6 +95,7 @@ button:hover {
 
 li {
   display: flex;
+  flex-wrap: nowrap;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 10px;
@@ -120,4 +123,19 @@ li:hover {
 
 .delete-button:hover {
   background-color: #ff4c4c;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  margin-right: 5px;
+  text-align: left;
+}
+
+.task-input {
+  margin-right: 5px;
+}
+
+.done label {
+  text-decoration: line-through;
 }
