@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css"/>
-    <link rel="stylesheet" href="./main.css" />
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/3.0.1/modern-normalize.min.css" />
+        <link rel="stylesheet" href="./main.css" />
+    </head>
+    <body>
+        <div id="weather-widget">
+            <div id="date-time">
+                <p id="date"></p>
+                <p id="time"></p>
+            </div>
+            <h2 id="city">Kyiv</h2>
+            <div id="weather-content">
+                <div id="main-info">
+                    <p id="temperature"></p>
+                    <p id="feels-like"></p>
+                </div>
+                <div id="additional-info">
+                    <p id="description"></p>
+                    <p id="humidity"></p>
+                    <p id="pressure"></p>
+                    <p id="wind"></p>
+                </div>
+            </div>
+            <button id="update-button">Update</button>
+        </div>
     <script src="./index.js"></script>
-</body>
+    </body>
 </html>
