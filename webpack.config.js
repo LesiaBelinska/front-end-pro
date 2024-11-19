@@ -56,6 +56,7 @@ module.exports = (env, argv) => {
       static: path.resolve(__dirname, "dist"),
       port: 8080,
       open: true,
+      hot: true,
       devMiddleware: {
         writeToDisk: false,
       },
