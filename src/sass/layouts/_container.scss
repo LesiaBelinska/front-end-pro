@@ -1,0 +1,13 @@
+#new-post-container,
+#posts-container {
+  margin: 0 auto;
+  max-width: 800px;
+  padding: 15px;
+}
+
+#posts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px 0;
+}
