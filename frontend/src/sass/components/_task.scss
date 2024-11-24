@@ -1,16 +1,5 @@
 @use '../base/variables';
 
-.list {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 0;
-  list-style: none;
-}
-
-#task-list {
-  padding: 15px 0;
-}
-
 li {
   display: flex;
   flex-wrap: nowrap;
@@ -27,4 +16,8 @@ li {
     background-color: variables.$primary-color;
     color: white;
   }
+}
+
+.done label {
+  text-decoration: line-through;
 }
