@@ -9,8 +9,8 @@ module.exports = (env, argv) => {
     mode: isProduction ? "production" : "development",
     entry: {
       main: [
-        path.join(__dirname, "./src/index.js"),
-        path.join(__dirname, "./src/sass/main.scss"),
+        path.join(__dirname, "./frontend/src/index.js"),
+        path.join(__dirname, "./frontend/src/sass/main.scss"),
       ],
     },
     output: {
@@ -45,8 +45,8 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "src/index.html"), // Використовуйте шаблон
-        filename: "index.html", 
+        template: path.resolve(__dirname, "./frontend/src/index.html"),
+        filename: "index.html",
       }),
       new MiniCssExtractPlugin({
         filename: "styles.css",

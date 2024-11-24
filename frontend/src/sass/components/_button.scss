@@ -1,0 +1,30 @@
+@use '../base/variables';
+
+button {
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  background-color: variables.$primary-color;
+  border-radius: 5px;
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: variables.$primary-hover;
+  }
+}
+
+.delete-button {
+  padding: 5px 10px;
+  color: white;
+  border: 0;
+  background-color: variables.$secondary-color;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: variables.$secondary-hover;
+  }
+}

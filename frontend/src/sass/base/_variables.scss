@@ -1,0 +1,10 @@
+$primary-color: #7f9eb2;
+$primary-hover: #5a7a8a;
+$secondary-color: #ff6b6b;
+$secondary-hover: #ff4c4c;
+$background-color: #c4eeee;
+$container-bg: #ffffff;
+$task-bg: #b2c9d4;
+$message-bg-color: #28a745;
+
+@forward "sass:color"; 
