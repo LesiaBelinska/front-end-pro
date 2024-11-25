@@ -12,10 +12,17 @@ const addTask = async (taskInput) => {
   const taskText = taskInput.value.trim();
 
   if (taskText !== "") {
-    const newTask = await createTodo({ text: taskText, status: false });
-    tasks.push(newTask);
-    renderTasks(tasks);
-    taskInput.value = "";
+    try {
+      const newTask = await createTodo({ text: taskText, status: false });
+
+      tasks.push(newTask);
+      renderTasks(tasks);
+      taskInput.value = "";
+      showNotification(`Task "${taskText}" was added successfully!`);
+    } catch (error) {
+      console.error("Failed to add task", error);
+      showNotification("Failed to add task. Please try again.");
+    }
   }
 };
 
@@ -33,7 +40,7 @@ const toggleTaskDone = async (event) => {
     const updatedStatus = !task.status;
 
     try {
-      await updateTodo(taskId, { status: updatedStatus }); 
+      await updateTodo(taskId, { status: updatedStatus });
       task.status = updatedStatus;
       renderTasks(tasks);
       showNotification(
@@ -41,7 +48,6 @@ const toggleTaskDone = async (event) => {
       );
     } catch (error) {
       console.error("Failed to update task status", error);
-      showNotification("Failed to update task status. Please try again.");
     }
   }
 };
@@ -64,7 +70,6 @@ const deleteTaskHandler = async (event) => {
       showNotification(`Task "${task.text}" deleted.`);
     } catch (error) {
       console.error("Failed to delete task", error);
-      showNotification("Failed to delete task. Please try again.");
     }
   }
 };
