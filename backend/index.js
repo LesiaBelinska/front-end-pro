@@ -23,7 +23,6 @@ app.post("/todos", (req, res) => {
   const newTodo = { ...req.body, id: todos.length + 1 };
 
   todos.push(newTodo);
-
   res.status(200).json(newTodo);
 });
 
