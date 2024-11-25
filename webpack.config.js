@@ -45,7 +45,7 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
-        template: path.resolve(__dirname, "src/index.html"), // Використовуйте шаблон
+        template: path.resolve(__dirname, "src/index.html"),
         filename: "index.html", 
       }),
       new MiniCssExtractPlugin({
