@@ -9,7 +9,8 @@ const renderTasks = (tasks) => {
     const newTask = `
       <li data-id=${task.id} class=${task.status ? "done" : ""}>
         <label>
-          <input type="checkbox" class="task-input" ${task.status ? "checked" : ""} />
+          <input type="checkbox" class="task-input" ${task.status ? "checked" : ""
+      } />
           ${task.text}
         </label>
         <button class="delete-button">Delete</button>
@@ -23,13 +24,13 @@ const notification = document.querySelector("#notification");
 
 const showNotification = (message) => {
   notification.textContent = message;
-  notification.classList.remove("hidden");
+  notification.classList.add("visible");
 
   clearTimeout(window.notificationTimeout);
 
   window.notificationTimeout = setTimeout(() => {
-    notification.classList.add("hidden");
-  }, 3000);
+    notification.classList.remove("visible");
+  }, 2000);
 };
 
 export { taskList, renderTasks, showNotification };
